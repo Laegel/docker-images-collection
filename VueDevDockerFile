@@ -1,0 +1,9 @@
+FROM node:latest
+WORKDIR /var/www/project
+
+COPY ./package.json .
+
+RUN yarn install
+
+# Installing @vue/cli locally instead of globally
+CMD node node_modules/.bin/vue-cli-service serve
